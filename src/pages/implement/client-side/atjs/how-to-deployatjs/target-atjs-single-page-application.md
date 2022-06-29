@@ -95,7 +95,7 @@ Now that we have covered what Adobe Target Views are, we can leverage this conce
 
    As marketers, if we want to run A/B tests on the whole home site, then we might want to name the view "home":
 
-  ```
+  ```React
    function targetView() {
      var viewName = window.location.hash; // or use window.location.pathName if router works on path and not hash
 
@@ -126,7 +126,7 @@ Now that we have covered what Adobe Target Views are, we can leverage this conce
 
    ![react products](/assets/react4.png)
 
-  ```
+  ```React
    function targetView(viewName) {
      // Validate if the Target Libraries are available on your website
      if (typeof adobe != 'undefined' && adobe.target && typeof adobe.target.triggerView === 'function') {
@@ -157,7 +157,7 @@ Now that we have covered what Adobe Target Views are, we can leverage this conce
 
    Now, marketers might want to run an A/B test to see whether changing the color from blue to red when Express Delivery is selected can boost conversions as opposed to keeping the button color blue for both delivery options.  
 
-  ```
+  ```React
    function targetView(viewName) {
      // Validate if the Target Libraries are available on your website
      if (typeof adobe != 'undefined' && adobe.target && typeof adobe.target.triggerView === 'function') {
@@ -249,7 +249,7 @@ To make sure that A4T works with at.js 2.x,
 
 The view start handler should look something like this:
 
-```
+```React
 document.addEventListener("at-view-start", function(e) {
   var visitor = Visitor.getInstance("<your Adobe Org ID>");
   
@@ -260,7 +260,7 @@ document.addEventListener("at-view-start", function(e) {
 
 The view end handler should look something like this:
 
-```
+```React
 document.addEventListener("at-view-end", function(e) {
   // s - is the AppMeasurement tracker object
   s.t();
